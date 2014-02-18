@@ -1,15 +1,216 @@
-<html>
-<body>
 
-<div class='header'><h1>Home</h1></div>
-<div class='search-view'>
-<input class='search-key' type="text"/>
-<ul class='employee-list'></ul>
+<div class="panel panel-default"> 
+  <div class="panel-heading">General Information</div>
+  <div class="panel-body"> 
+    <div class="row">
+      <h3 class="text-center">Team/Event Info:<br/></h3>
+    </div><br/>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="input-group"><span class="input-group-addon">Team  #</span>
+          <input type="number" ng-model="teamNumber" class="form-control"/>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <select ng-options="e.name for e in events" ng-model="event" required="required" class="form-control"></select>
+      </div>
+    </div><br/>
+    <hr/>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3 class="text-center">Wheels:<br/><br/></h3>
+        <div class="row">
+          <div class="col-sm-6">
+            <select ng-options="wheelL1.name for wheelL1 in wheels" ng-model="wheelL1" required="required" class="form-control"></select>
+          </div>
+          <div class="col-sm-6">
+            <select ng-options="wheelR1.name for wheelR1 in wheels" ng-model="wheelR1" required="required" class="form-control"></select>
+          </div>
+        </div><br/>
+        <div class="row">
+          <div class="col-sm-6">
+            <select ng-options="wheelL2.name for wheelL2 in wheels" ng-model="wheelL2" required="required" class="form-control"></select>
+          </div>
+          <div class="col-sm-6">
+            <select ng-options="wheelR2.name for wheelR2 in wheels" ng-model="wheelR2" required="required" class="form-control"></select>
+          </div>
+        </div><br/>
+        <div class="row">
+          <div class="col-sm-6">
+            <select ng-options="wheelL3.name for wheelL3 in wheels" ng-model="wheelL3" required="required" class="form-control"></select>
+          </div>
+          <div class="col-sm-6">
+            <select ng-options="wheelR3.name for wheelR3 in wheels" ng-model="wheelR3" required="required" class="form-control"></select>
+          </div>
+        </div><br/>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="input-group"><span class="input-group-addon">Notes:</span>
+              <input type="text" ng-model="wheelNotes" class="form-control"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3 class="text-center">Robot Height:<br/><br/>
+          <div class="input-group">
+            <input type="number" ng-model="robotHeight" class="form-control"/><span class="input-group-addon">inches</span>
+          </div>
+        </h3>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="text-center">Shifting?</h3><br/>
+        <div class="row">
+          <div class="text-center">
+            <div class="btn-group">
+              <button type="button" ng-model="shifting" btn-radio="true" class="btn btn-primary">Yes</button>
+              <button type="button" ng-model="shifting" btn-radio="false" class="btn btn-primary">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="text-center">Shooting Range:<br/>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="text-center"> 
+                <h4>Min</h4>
+                <select ng-options="minShoot.name for minShoot in zones" ng-model="minShoot" required="required" class="form-control"></select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-center"> 
+                <h4>Max</h4>
+                <select ng-options="maxShoot.name for maxShoot in zones" ng-model="maxShoot" required="required" class="form-control"></select>
+              </div>
+            </div>
+          </div>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="btn">Save</div>
+  </div>
 </div>
-
-<script src="lib/jquery-1.8.2.min.js"></script>
-<script src="js/storage/memory-store.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-</html>
+<div class="panel panel-default">
+  <div class="panel-heading">Robot Information</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3 class="text-center">Shooter Type:<br/></h3>
+        <select ng-options="shooterType.name for shooterType in shooterTypes" ng-model="shooterType" required="required" class="form-control"></select>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="text-center">Collector Type:<br/></h3>
+        <select ng-options="collectorType.name for collectorType in collectorTypes" ng-model="collectorType" required="required" class="form-control"></select>
+      </div>
+    </div><br/>
+    <hr/>
+    <div class="row">
+      <div class="col-sm-6">
+        <h3 class="text-center">Able to catch?</h3><br/>
+        <div class="text-center">
+          <div class="btn-group">
+            <button type="button" ng-model="catchAble" btn-radio="true" class="btn btn-primary">Yes</button>
+            <button type="button" ng-model="catchAble" btn-radio="false" class="btn btn-primary">No</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="text-center">What happens if disabled with ball?<br/><br/>
+          <div class="input-group">
+            <input type="text" ng-model="disabledPlan" class="form-control"/><span class="input-group-addon"> </span>
+          </div>
+        </h3>
+      </div>
+    </div><br/>
+    <hr/>
+    <div class="row"> 
+      <div class="col-sm-6">
+        <h3 class="text-center">Preffered Play Style:<br/><br/>
+          <select ng-options="playstyle.name for playstyle in playstyles" ng-model="playstyle" required="required" class="form-control"></select>
+        </h3>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="text-center">Reload Time:<br/><br/>
+          <select ng-options="time.name for time in reloadTimes" ng-model="reloadTime" required="required" class="form-control"></select>
+        </h3>
+      </div>
+    </div><br/>
+  </div>
+  <div class="panel-footer">
+    <div class="btn">Save</div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Autonomous Information</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="row">
+          <h3 class="text-center">Drive forward autonomous?</h3><br/>
+        </div>
+        <div class="row">
+          <div class="text-center">
+            <div class="btn-group">
+              <button type="button" ng-model="dfAuto" btn-radio="true" class="btn btn-primary">Yes</button>
+              <button type="button" ng-model="dfAuto" btn-radio="false" class="btn btn-primary">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h3>Number of balls they can score:</h3><br/>
+            <div class="btn-group">
+              <button type="button" ng-model="autoBalls" btn-radio="0" class="btn btn-primary">0</button>
+              <button type="button" ng-model="autoBalls" btn-radio="1" class="btn btn-primary">1</button>
+              <button type="button" ng-model="autoBalls" btn-radio="2" class="btn btn-primary">2</button>
+              <button type="button" ng-model="autoBalls" btn-radio="3" class="btn btn-primary">3</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="text-center">Recognize hot goal?</h3><br/>
+        <div class="text-center">
+          <div class="btn-group">
+            <button type="button" ng-model="hotRecog" btn-radio="true" class="btn btn-primary">Yes</button>
+            <button type="button" ng-model="hotRecog" btn-radio="false" class="btn btn-primary">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="text-center">Starting Position:<br/><br/>
+          <select ng-options="position.name for position in startSpots" ng-model="startPosition" required="required" class="form-control"></select>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="btn">Save</div>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Notes</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="input-group">
+          <input type="text" ng-model="generalNotes" class="form-control"/><span class="input-group-addon"> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <div class="btn-lg btn btn-success">Save All</div>
+  </div>
+</div>
