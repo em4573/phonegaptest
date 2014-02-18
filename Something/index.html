@@ -20,11 +20,17 @@
 	    <div class="row">
 	      <div class="col-xs-6">
 	        <div class="input-group"><span class="input-group-addon">Team  #</span>
-	          <input type="number" ng-model="teamNumber" class="form-control"/>
+	          <input type="number" id="teamNumber" class="form-control"/>
 	        </div>
 	      </div>
 	      <div class="col-xs-6">
-	        <select ng-options="e.name for e in events" ng-model="event" required="required" class="form-control"></select>
+	        <select class="form-control">
+              <option value="1">Oregon City District</option>
+              <option value="2">Wilsonville District</option>
+              <option value="3">OSU District</option>
+              <option value="4">PNW Championships</option>
+              <option value="5">World Championships</option>
+            </select>
 	      </div>
 	    </div><br/>
 	    <hr/>
@@ -33,32 +39,80 @@
 	        <h3 class="text-center">Wheels:<br/><br/></h3>
 	        <div class="row">
 	          <div class="col-xs-6">
-	            <select ng-options="wheelL1.name for wheelL1 in wheels" ng-model="wheelL1" required="required" class="form-control"></select>
+	            <select class="form-control" id = "wL1">
+	              <option value="none">None</option>
+	              <option value="hightrac">High Traction</option>
+	              <option value="trac">Traction</option>
+	              <option value="mech">Mecanum</option>
+	              <option value="omni">Omni</option>
+	              <option value="swerve">Swerve</option>
+	              <option value="caster">Caster</option>
+	            </select>
 	          </div>
 	          <div class="col-xs-6">
-	            <select ng-options="wheelR1.name for wheelR1 in wheels" ng-model="wheelR1" required="required" class="form-control"></select>
+	            <select class="form-control" id = "wR1">
+	              <option value="none">None</option>
+	              <option value="hightrac">High Traction</option>
+	              <option value="trac">Traction</option>
+	              <option value="mech">Mecanum</option>
+	              <option value="omni">Omni</option>
+	              <option value="swerve">Swerve</option>
+	              <option value="caster">Caster</option>
+	            </select>
 	          </div>
 	        </div><br/>
 	        <div class="row">
 	          <div class="col-xs-6">
-	            <select ng-options="wheelL2.name for wheelL2 in wheels" ng-model="wheelL2" required="required" class="form-control"></select>
+	            <select class="form-control" id = "wL2">
+	              <option value="none">None</option>
+	              <option value="hightrac">High Traction</option>
+	              <option value="trac">Traction</option>
+	              <option value="mech">Mecanum</option>
+	              <option value="omni">Omni</option>
+	              <option value="swerve">Swerve</option>
+	              <option value="caster">Caster</option>
+	            </select>
 	          </div>
 	          <div class="col-xs-6">
-	            <select ng-options="wheelR2.name for wheelR2 in wheels" ng-model="wheelR2" required="required" class="form-control"></select>
+	            <select class="form-control" id = "wR2">
+	              <option value="none">None</option>
+	              <option value="hightrac">High Traction</option>
+	              <option value="trac">Traction</option>
+	              <option value="mech">Mecanum</option>
+	              <option value="omni">Omni</option>
+	              <option value="swerve">Swerve</option>
+	              <option value="caster">Caster</option>
+	            </select>
 	          </div>
 	        </div><br/>
 	        <div class="row">
 	          <div class="col-xs-6">
-	            <select ng-options="wheelL3.name for wheelL3 in wheels" ng-model="wheelL3" required="required" class="form-control"></select>
+	            <select class="form-control" id = "wL3">
+	              <option value="none">None</option>
+	              <option value="hightrac">High Traction</option>
+	              <option value="trac">Traction</option>
+	              <option value="mech">Mecanum</option>
+	              <option value="omni">Omni</option>
+	              <option value="swerve">Swerve</option>
+	              <option value="caster">Caster</option>
+	            </select>
 	          </div>
 	          <div class="col-xs-6">
-	            <select ng-options="wheelR3.name for wheelR3 in wheels" ng-model="wheelR3" required="required" class="form-control"></select>
+	            <select class="form-control" id = "wR3">
+	              <option value="none">None</option>
+	              <option value="hightrac">High Traction</option>
+	              <option value="trac">Traction</option>
+	              <option value="mech">Mecanum</option>
+	              <option value="omni">Omni</option>
+	              <option value="swerve">Swerve</option>
+	              <option value="caster">Caster</option>
+	            </select>
 	          </div>
 	        </div><br/>
 	        <div class="row">
 	          <div class="col-lg-12">
 	            <div class="input-group"><span class="input-group-addon">Notes:</span>
-	              <input type="text" ng-model="wheelNotes" class="form-control"/>
+	              <input type="text" id="wheelNotes" class="form-control"/>
 	            </div>
 	          </div>
 	        </div>
@@ -69,7 +123,7 @@
 	      <div class="col-xs-4">
 	        <h3 class="text-center">Robot Height:<br/><br/>
 	          <div class="input-group">
-	            <input type="number" ng-model="robotHeight" class="form-control"/><span class="input-group-addon">inches</span>
+	            <input type="number" id="robotHeight" class="form-control"/><span class="input-group-addon">inches</span>
 	          </div>
 	        </h3>
 	      </div>
@@ -78,8 +132,8 @@
 	        <div class="row">
 	          <div class="text-center">
 	            <div class="btn-group">
-	              <button type="button" ng-model="shifting" btn-radio="true" class="btn btn-primary">Yes</button>
-	              <button type="button" ng-model="shifting" btn-radio="false" class="btn btn-primary">No</button>
+	              <button type="button" id="shifting" btn-radio="true" class="btn btn-primary">Yes</button>
+	              <button type="button" id="shifting" btn-radio="false" class="btn btn-primary">No</button>
 	            </div>
 	          </div>
 	        </div>
@@ -90,13 +144,13 @@
 	            <div class="col-xs-6">
 	              <div class="text-center"> 
 	                <h4>Min</h4>
-	                <select ng-options="minShoot.name for minShoot in zones" ng-model="minShoot" required="required" class="form-control"></select>
+	                <select ng-options="minShoot.name for minShoot in zones" id="minShoot" required="required" class="form-control"></select>
 	              </div>
 	            </div>
 	            <div class="col-xs-6">
 	              <div class="text-center"> 
 	                <h4>Max</h4>
-	                <select ng-options="maxShoot.name for maxShoot in zones" ng-model="maxShoot" required="required" class="form-control"></select>
+	                <select ng-options="maxShoot.name for maxShoot in zones" id="maxShoot" required="required" class="form-control"></select>
 	              </div>
 	            </div>
 	          </div>
@@ -111,11 +165,11 @@
 	    <div class="row">
 	      <div class="col-xs-6">
 	        <h3 class="text-center">Shooter Type:<br/></h3>
-	        <select ng-options="shooterType.name for shooterType in shooterTypes" ng-model="shooterType" required="required" class="form-control"></select>
+	        <select ng-options="shooterType.name for shooterType in shooterTypes" id="shooterType" required="required" class="form-control"></select>
 	      </div>
 	      <div class="col-xs-6">
 	        <h3 class="text-center">Collector Type:<br/></h3>
-	        <select ng-options="collectorType.name for collectorType in collectorTypes" ng-model="collectorType" required="required" class="form-control"></select>
+	        <select ng-options="collectorType.name for collectorType in collectorTypes" id="collectorType" required="required" class="form-control"></select>
 	      </div>
 	    </div><br/>
 	    <hr/>
@@ -124,15 +178,15 @@
 	        <h3 class="text-center">Able to catch?</h3><br/>
 	        <div class="text-center">
 	          <div class="btn-group">
-	            <button type="button" ng-model="catchAble" btn-radio="true" class="btn btn-primary">Yes</button>
-	            <button type="button" ng-model="catchAble" btn-radio="false" class="btn btn-primary">No</button>
+	            <button type="button" id="catchAble" btn-radio="true" class="btn btn-primary">Yes</button>
+	            <button type="button" id="catchAble" btn-radio="false" class="btn btn-primary">No</button>
 	          </div>
 	        </div>
 	      </div>
 	      <div class="col-xs-6">
 	        <h3 class="text-center">What happens if disabled with ball?<br/><br/>
 	          <div class="input-group">
-	            <input type="text" ng-model="disabledPlan" class="form-control"/><span class="input-group-addon"> </span>
+	            <input type="text" id="disabledPlan" class="form-control"/><span class="input-group-addon"> </span>
 	          </div>
 	        </h3>
 	      </div>
@@ -141,12 +195,12 @@
 	    <div class="row"> 
 	      <div class="col-xs-6">
 	        <h3 class="text-center">Preffered Play Style:<br/><br/>
-	          <select ng-options="playstyle.name for playstyle in playstyles" ng-model="playstyle" required="required" class="form-control"></select>
+	          <select ng-options="playstyle.name for playstyle in playstyles" id="playstyle" required="required" class="form-control"></select>
 	        </h3>
 	      </div>
 	      <div class="col-xs-6">
 	        <h3 class="text-center">Reload Time:<br/><br/>
-	          <select ng-options="time.name for time in reloadTimes" ng-model="reloadTime" required="required" class="form-control"></select>
+	          <select ng-options="time.name for time in reloadTimes" id="reloadTime" required="required" class="form-control"></select>
 	        </h3>
 	      </div>
 	    </div><br/>
@@ -163,8 +217,8 @@
 	        <div class="row">
 	          <div class="text-center">
 	            <div class="btn-group">
-	              <button type="button" ng-model="dfAuto" btn-radio="true" class="btn btn-primary">Yes</button>
-	              <button type="button" ng-model="dfAuto" btn-radio="false" class="btn btn-primary">No</button>
+	              <button type="button" id="dfAuto" btn-radio="true" class="btn btn-primary">Yes</button>
+	              <button type="button" id="dfAuto" btn-radio="false" class="btn btn-primary">No</button>
 	            </div>
 	          </div>
 	        </div>
@@ -174,10 +228,10 @@
 	          <div class="col-lg-12 text-center">
 	            <h3>Number of balls they can score:</h3><br/>
 	            <div class="btn-group">
-	              <button type="button" ng-model="autoBalls" btn-radio="0" class="btn btn-primary">0</button>
-	              <button type="button" ng-model="autoBalls" btn-radio="1" class="btn btn-primary">1</button>
-	              <button type="button" ng-model="autoBalls" btn-radio="2" class="btn btn-primary">2</button>
-	              <button type="button" ng-model="autoBalls" btn-radio="3" class="btn btn-primary">3</button>
+	              <button type="button" id="autoBalls" btn-radio="0" class="btn btn-primary">0</button>
+	              <button type="button" id="autoBalls" btn-radio="1" class="btn btn-primary">1</button>
+	              <button type="button" id="autoBalls" btn-radio="2" class="btn btn-primary">2</button>
+	              <button type="button" id="autoBalls" btn-radio="3" class="btn btn-primary">3</button>
 	            </div>
 	          </div>
 	        </div>
@@ -186,8 +240,8 @@
 	        <h3 class="text-center">Recognize hot goal?</h3><br/>
 	        <div class="text-center">
 	          <div class="btn-group">
-	            <button type="button" ng-model="hotRecog" btn-radio="true" class="btn btn-primary">Yes</button>
-	            <button type="button" ng-model="hotRecog" btn-radio="false" class="btn btn-primary">No</button>
+	            <button type="button" id="hotRecog" btn-radio="true" class="btn btn-primary">Yes</button>
+	            <button type="button" id="hotRecog" btn-radio="false" class="btn btn-primary">No</button>
 	          </div>
 	        </div>
 	      </div>
@@ -196,7 +250,7 @@
 	    <div class="row">
 	      <div class="col-lg-12">
 	        <h3 class="text-center">Starting Position:<br/><br/>
-	          <select ng-options="position.name for position in startSpots" ng-model="startPosition" required="required" class="form-control"></select>
+	          <select ng-options="position.name for position in startSpots" id="startPosition" required="required" class="form-control"></select>
 	        </h3>
 	      </div>
 	    </div>
@@ -208,7 +262,7 @@
 	    <div class="row">
 	      <div class="col-lg-12">
 	        <div class="input-group">
-	          <input type="text" ng-model="generalNotes" class="form-control"/><span class="input-group-addon"> </span>
+	          <input type="text" id="generalNotes" class="form-control"/><span class="input-group-addon"> </span>
 	        </div>
 	      </div>
 	    </div>
