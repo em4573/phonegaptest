@@ -23,6 +23,7 @@
 	a(document.getElementById(currentEvent).options[document.getElementById(currentEvent).selectedIndex].value);
 
 	function writeFile() {
+		document.body.style.background = "red";
 		var writer = new FileWriter();
 		writer.onwrite = writeSuccess;
 		writer.writeAsText("sdcard/info.txt", result + \n, false);
